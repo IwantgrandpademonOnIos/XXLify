@@ -1,86 +1,51 @@
 {
-	"geode": "5.7.1",
-	"gd": {
-		"win": "2.2081",
-		"mac": "2.2081",
-		"android": "2.2081"
-		"ios": "2.2081"
-	},
-	"version": "v1.3.5",
-	"id": "ziegenhainy.xxlify",
-	"name": "XXLify",
-	"developer": "Ziegenhainy",
-	"description": "Long levels get more Xs in length",
-	"issues": {
-		"info": "Report issues to the Github Repo!",
-		"url": "https://github.com/Ziegenhainy/XXLify/issues"
-	},
-	"resources": {
-		"sprites": [
-			"resources/*.png"
-		]
-	},
-	"tags": [
-		"customization",
-		"enhancement",
-		"offline"
-	],
-	"settings": {
+    "geode": "2.0.0",
+    "id": "iwantgrandpademon.xxlify",
+    "name": "XXLify",
+    "version": "1.3.5",
+    "description": "Adds XXL length labels to levels.",
+    "authors": [
+        "cvolton",
+        "IwantgrandpademonOnIos"
+    ],
+    "platforms": [
+        "windows",
+        "macos",
+        "android",
+        "ios"
+    ],
+    "settings": {
         "maximum-xs": {
-            "name": "Maximum Xs",
-            "description": "How many Xs you can have before an L",
             "type": "int",
-            "default": 10,
-			"max": 100,
-			"min": 1,
-			"control": {
-				"slider": false
-			}
+            "default": 20
         },
-		"xxl-scaling": {
-			"name": "XXL Scaling",
-			"description": "How long levels need to be to get a longer label. The length of the level needs to be multiplied by this number to get a longer Label. (e.g. at 1.5, XL is 2 minutes, XXl is 3 minutes, XXXL is 4,5 minutes etc.)",
-			"type": "float",
-			"default": 2,
-			"max": 10,
-			"min": 1.1
-		},
-		"use-power-notation": {
-			"name": "Use power notation",
-			"description": "If enabled, levels above the maximum X limit will be displayed using power notation, i.e. \"XXXL\" becomes \"X^3L\"",
-			"type": "bool",
-			"default": true
-		},
-		"xxl-plus": {
-			"name": "Enable XXL+",
-			"description": "If enabled, levels that are beyond halfway to the next XXL label get a + added to the length",
-			"type": "bool",
-			"default": true
-		},
-		"long-plus": {
-			"name": "Enable Long+",
-			"description": "If enabled, levels that are longer than 1m30s will be Long+",
-			"type": "bool",
-			"default": true
-		},
-		"use-color": {
-			"name": "Use colored label",
-			"description": "Enables a colored label",
-			"type": "bool",
-			"default": true
-		},
-		"label-color":{
-			"name": "Label Color",
-			"description": "Color that the XXL label will have",
-			"type": "color",
-			"default": "#880000"
-		},
-		"maximum-color": {
-			"name": "Maximum color length",
-			"description": "Length in minutes at which the color has been reached",
-			"type": "int",
-			"default": 60,
-			"min": 0
-		}
+        "use-power-notation": {
+            "type": "bool",
+            "default": false
+        },
+        "xxl-plus": {
+            "type": "bool",
+            "default": true
+        },
+        "xxl-scaling": {
+            "type": "float",
+            "default": 1.5
+        },
+        "use-color": {
+            "type": "bool",
+            "default": false
+        },
+        "maximum-color": {
+            "type": "int",
+            "default": 5
+        },
+        "label-color": {
+            "type": "color",
+            "default": "255,255,255"
+        },
+        "long-plus": {
+            "type": "bool",
+            "default": true
+        }
     }
 }
