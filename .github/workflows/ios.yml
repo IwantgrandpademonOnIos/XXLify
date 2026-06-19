@@ -1,0 +1,35 @@
+name: Build iOS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install CMake
+      run: brew install cmake ninja
+
+    - name: Set up Geode SDK
+      run: |
+        git clone https://github.com/geode-sdk/geode.git --depth=1
+        echo "GEODE_SDK=$PWD/geode" >> $GITHUB_ENV
+
+    - name: Configure
+      run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DGEODE_PLATFORM=ios
+
+    - name: Build
+      run: cmake --build build --config Release
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: XXLify-iOS
+        path: build/*.geode
